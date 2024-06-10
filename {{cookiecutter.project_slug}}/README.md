@@ -6,13 +6,13 @@
 
 ## Installation
 
-`pip install {{cookiecutter.project_slug}}`
+`cd {cookiecutter.project_slug}`
+`make install-dev`
 
-{%- if cookiecutter.project_shell_cmd %}
 ## Usage
 
-`$ {{cookiecutter.project_shell_cmd}} --help`
-{% endif %}
+`$ make help`
+`$ make build`
 
 ---
-Created from Binfie-cookiecutter, https://github.com/crashfrog/binfie-cookiecutter
+Created from device-cookiecutter, https://github.com/crashfrog/device-cookiecutter
