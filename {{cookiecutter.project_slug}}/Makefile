@@ -31,8 +31,9 @@ clean-build: ## remove build artifacts
 
 install-dev: ## Use Brew to install OpenSCAD, NopSCADLib, and its Python dependencies
 	brew install openscad imagemagick kicad
-	python -m pip install colorama codespell markdown
+	python -m pip install colorama codespell markdown toolmaster-of-brainerd
 	cd ~/Documents/OpenSCAD/libraries
 	git clone https://github.com/nophead/NopSCADlib.git
 
 board: ## Create a SCAD definition for the board.
+	toolmaster-of-brainerd {{cookiecutter.project_slug}}.kicad_pcb -o scad/{{cookiecutter.pkg_name}}_board.scad
