@@ -31,9 +31,14 @@ clean-build: ## remove build artifacts
 
 install-dev: ## Use Brew to install OpenSCAD, NopSCADLib, and its Python dependencies
 	brew install openscad imagemagick kicad
+	brew install --cask inkscape
 	python -m pip install colorama codespell markdown toolmaster-of-brainerd
 	cd ~/Documents/OpenSCAD/libraries
 	git clone https://github.com/nophead/NopSCADlib.git
 
-board: ## Create a SCAD definition for the board.
+board: ## Compile SVGs to DXF for KiCad
+	inkscape --without-gui --file=svg/{{cookiecutter.pkg_name}}_edge_plan.svg --export-dxf=dxf/{{cookiecutter.pkg_name}}_edge_plan.dxf --export-area-drawing --export-type="LWPOLYLINE" --export-layer="edge_cuts" --flatten
+
+
+enclosure: ## Create a SCAD definition for the board for enclosure design.
 	toolmaster-of-brainerd {{cookiecutter.project_slug}}.kicad_pcb -o scad/{{cookiecutter.pkg_name}}_board.scad
