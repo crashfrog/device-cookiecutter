@@ -10,5 +10,11 @@
     "project_short_description": "A cool new project.",
     "version": "0.1.0",
     "create_author_file": "y",
-    "open_source_license": ["MIT license", "GNU General Public License v3", "Public domain", "US Government Work Product", "BSD license", "ISC license", "Apache Software License 2.0",  "Not open source"]
+    "open_source_license": ["CERN Open Hardware license v2, strongly-reciprocal (CERN-OHL-S)",
+                            "CERN Open Hardware license v2, weakly-reciprocal (CERN-OHL-W)",
+                            "CERN Open Hardware license v2, permissive (CERN-OHL-P)",
+                            "GNU General Public License v3",
+                            "Public domain", 
+                            "Apache Software License 2.0",  
+                            "Not open source"]
   }

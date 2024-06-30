@@ -40,5 +40,5 @@ board: ## Compile SVGs to DXF for KiCad
 	inkscape --without-gui --file=svg/{{cookiecutter.pkg_name}}_edge_plan.svg --export-dxf=dxf/{{cookiecutter.pkg_name}}_edge_plan.dxf --export-area-drawing --export-type="LWPOLYLINE" --export-layer="edge_cuts" --flatten
 
 
-enclosure: ## Create a SCAD definition for the board for enclosure design.
-	toolmaster-of-brainerd {{cookiecutter.project_slug}}.kicad_pcb -o scad/{{cookiecutter.pkg_name}}_board.scad
+enclosure: ## Create a SCAD definition for the board for enclosure design, using Toolmaster of Brainerd.
+	tob {{cookiecutter.project_slug}}.kicad_pcb -o scad/{{cookiecutter.pkg_name}}_board.scad
